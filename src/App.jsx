@@ -10,12 +10,13 @@ import LeadDetails from "@/components/pages/LeadDetails"
 import DealDesk from "@/components/pages/DealDesk"
 import Reports from "@/components/pages/Reports"
 import Settings from "@/components/pages/Settings"
+import CustomerPortal from "@/components/pages/CustomerPortal"
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-background">
-        <Routes>
+<Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="inventory" element={<Inventory />} />
@@ -26,6 +27,7 @@ function App() {
             <Route path="deals" element={<DealDesk />} />
             <Route path="reports" element={<Reports />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="customer-portal" element={<CustomerPortal />} />
           </Route>
         </Routes>
         

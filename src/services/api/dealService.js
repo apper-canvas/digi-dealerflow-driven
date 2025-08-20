@@ -50,6 +50,37 @@ export const dealService = {
     return null;
   },
 
+  async addDocument(dealId, document) {
+    await delay();
+    const deal = deals.find(d => d.Id === parseInt(dealId));
+    if (deal) {
+      if (!deal.documents) {
+        deal.documents = [];
+      }
+      const newDocument = {
+        ...document,
+        id: Date.now(),
+        uploadDate: new Date().toISOString()
+      };
+      deal.documents.push(newDocument);
+      return { ...newDocument };
+    }
+    return null;
+  },
+
+  async removeDocument(dealId, documentId) {
+    await delay();
+    const deal = deals.find(d => d.Id === parseInt(dealId));
+    if (deal && deal.documents) {
+      const index = deal.documents.findIndex(doc => doc.id === documentId);
+      if (index !== -1) {
+        const removedDocument = deal.documents.splice(index, 1)[0];
+        return { ...removedDocument };
+      }
+    }
+    return null;
+  },
+
   async calculateFinancing(principal, downPayment, interestRate, termMonths) {
     await delay();
     const loanAmount = principal - downPayment;
