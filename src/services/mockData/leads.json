@@ -1,0 +1,190 @@
+[
+  {
+    "Id": 1,
+    "customerName": "Sarah Johnson",
+    "phone": "(555) 234-5678",
+    "email": "sarah.johnson@email.com",
+    "interestedVehicles": [1, 4],
+    "source": "Website",
+    "status": "Hot",
+    "assignedTo": "Mike Rodriguez",
+    "lastContact": "2024-01-15T14:30:00Z",
+    "leadScore": 85,
+    "notes": "Very interested in Honda Accord, has financing pre-approved",
+    "appointments": [
+      {
+        "date": "2024-01-16T10:00:00Z",
+        "type": "Test Drive",
+        "vehicleId": 1,
+        "status": "Scheduled"
+      }
+    ],
+    "contactHistory": [
+      {
+        "date": "2024-01-15T14:30:00Z",
+        "type": "Phone Call",
+        "notes": "Discussed financing options and scheduled test drive",
+        "agent": "Mike Rodriguez"
+      },
+      {
+        "date": "2024-01-14T09:15:00Z",
+        "type": "Email",
+        "notes": "Sent vehicle information and pricing details",
+        "agent": "Mike Rodriguez"
+      }
+    ],
+    "budget": 30000,
+    "tradeIn": true,
+    "tradeInVehicle": "2018 Toyota Camry"
+  },
+  {
+    "Id": 2,
+    "customerName": "David Chen",
+    "phone": "(555) 345-6789",
+    "email": "d.chen@email.com",
+    "interestedVehicles": [2],
+    "source": "Phone Inquiry",
+    "status": "Warm",
+    "assignedTo": "Lisa Thompson",
+    "lastContact": "2024-01-14T16:45:00Z",
+    "leadScore": 72,
+    "notes": "Looking for work truck, needs financing information",
+    "appointments": [],
+    "contactHistory": [
+      {
+        "date": "2024-01-14T16:45:00Z",
+        "type": "Phone Call",
+        "notes": "Initial inquiry about F-150, gathering requirements",
+        "agent": "Lisa Thompson"
+      }
+    ],
+    "budget": 40000,
+    "tradeIn": false,
+    "tradeInVehicle": null
+  },
+  {
+    "Id": 3,
+    "customerName": "Jennifer Martinez",
+    "phone": "(555) 456-7890",
+    "email": "j.martinez@email.com",
+    "interestedVehicles": [5],
+    "source": "Referral",
+    "status": "Cold",
+    "assignedTo": "Mark Williams",
+    "lastContact": "2024-01-12T11:20:00Z",
+    "leadScore": 45,
+    "notes": "Price shopping, not ready to purchase yet",
+    "appointments": [],
+    "contactHistory": [
+      {
+        "date": "2024-01-12T11:20:00Z",
+        "type": "Email",
+        "notes": "Responded to initial inquiry with pricing information",
+        "agent": "Mark Williams"
+      },
+      {
+        "date": "2024-01-11T13:30:00Z",
+        "type": "Walk-in",
+        "notes": "Browsed inventory, interested in hybrid vehicles",
+        "agent": "Mark Williams"
+      }
+    ],
+    "budget": 25000,
+    "tradeIn": true,
+    "tradeInVehicle": "2017 Honda Civic"
+  },
+  {
+    "Id": 4,
+    "customerName": "Robert Taylor",
+    "phone": "(555) 567-8901",
+    "email": "robert.taylor@email.com",
+    "interestedVehicles": [7],
+    "source": "Social Media",
+    "status": "Hot",
+    "assignedTo": "Mike Rodriguez",
+    "lastContact": "2024-01-15T15:00:00Z",
+    "leadScore": 90,
+    "notes": "Ready to buy, cash purchase, just needs to see vehicle",
+    "appointments": [
+      {
+        "date": "2024-01-16T14:00:00Z",
+        "type": "Vehicle Inspection",
+        "vehicleId": 7,
+        "status": "Scheduled"
+      }
+    ],
+    "contactHistory": [
+      {
+        "date": "2024-01-15T15:00:00Z",
+        "type": "Phone Call",
+        "notes": "Cash buyer, very motivated, scheduled appointment",
+        "agent": "Mike Rodriguez"
+      }
+    ],
+    "budget": 35000,
+    "tradeIn": false,
+    "tradeInVehicle": null
+  },
+  {
+    "Id": 5,
+    "customerName": "Emily Davis",
+    "phone": "(555) 678-9012",
+    "email": "emily.davis@email.com",
+    "interestedVehicles": [6, 8],
+    "source": "Website",
+    "status": "Warm",
+    "assignedTo": "Lisa Thompson",
+    "lastContact": "2024-01-13T10:15:00Z",
+    "leadScore": 68,
+    "notes": "First-time buyer, needs guidance on financing options",
+    "appointments": [],
+    "contactHistory": [
+      {
+        "date": "2024-01-13T10:15:00Z",
+        "type": "Email",
+        "notes": "Sent financing information and first-time buyer guides",
+        "agent": "Lisa Thompson"
+      },
+      {
+        "date": "2024-01-12T14:20:00Z",
+        "type": "Web Form",
+        "notes": "Submitted inquiry through website contact form",
+        "agent": "System"
+      }
+    ],
+    "budget": 23000,
+    "tradeIn": false,
+    "tradeInVehicle": null
+  },
+  {
+    "Id": 6,
+    "customerName": "Michael Brown",
+    "phone": "(555) 789-0123",
+    "email": "m.brown@email.com",
+    "interestedVehicles": [1, 3],
+    "source": "Walk-in",
+    "status": "Follow-up",
+    "assignedTo": "Mark Williams",
+    "lastContact": "2024-01-10T17:30:00Z",
+    "leadScore": 55,
+    "notes": "Needs to discuss with spouse before making decision",
+    "appointments": [],
+    "contactHistory": [
+      {
+        "date": "2024-01-10T17:30:00Z",
+        "type": "Phone Call",
+        "notes": "Follow-up call, still considering options",
+        "agent": "Mark Williams"
+      },
+      {
+        "date": "2024-01-09T12:00:00Z",
+        "type": "Walk-in",
+        "notes": "Test drove Honda Accord, positive feedback",
+        "agent": "Mark Williams"
+      }
+    ],
+    "budget": 28000,
+    "tradeIn": true,
+    "tradeInVehicle": "2016 Nissan Altima"
+  }
+]

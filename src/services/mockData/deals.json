@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 1,
+    "vehicleId": 3,
+    "customerId": 6,
+    "customerName": "Michael Brown",
+    "salePrice": 24500,
+    "tradeInValue": 8500,
+    "netPrice": 16000,
+    "financing": {
+      "amount": 16000,
+      "downPayment": 2000,
+      "loanAmount": 14000,
+      "interestRate": 4.9,
+      "termMonths": 60,
+      "monthlyPayment": 263.12
+    },
+    "documents": [
+      {
+        "name": "Sales Contract",
+        "status": "Signed",
+        "signedDate": "2024-01-14T15:30:00Z"
+      },
+      {
+        "name": "Financing Agreement",
+        "status": "Signed",
+        "signedDate": "2024-01-14T15:45:00Z"
+      },
+      {
+        "name": "Trade-in Agreement",
+        "status": "Signed",
+        "signedDate": "2024-01-14T15:20:00Z"
+      }
+    ],
+    "status": "Completed",
+    "margin": 5000,
+    "dealDate": "2024-01-14T15:00:00Z",
+    "salesperson": "Mark Williams",
+    "financeManager": "Jennifer Lopez",
+    "deliveryDate": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "vehicleId": 1,
+    "customerId": 1,
+    "customerName": "Sarah Johnson",
+    "salePrice": 28500,
+    "tradeInValue": 12000,
+    "netPrice": 16500,
+    "financing": {
+      "amount": 16500,
+      "downPayment": 3000,
+      "loanAmount": 13500,
+      "interestRate": 3.9,
+      "termMonths": 60,
+      "monthlyPayment": 248.75
+    },
+    "documents": [
+      {
+        "name": "Sales Contract",
+        "status": "In Progress",
+        "signedDate": null
+      },
+      {
+        "name": "Financing Agreement",
+        "status": "Pending",
+        "signedDate": null
+      }
+    ],
+    "status": "In Progress",
+    "margin": 4000,
+    "dealDate": "2024-01-15T14:30:00Z",
+    "salesperson": "Mike Rodriguez",
+    "financeManager": "Jennifer Lopez",
+    "deliveryDate": null
+  },
+  {
+    "Id": 3,
+    "vehicleId": 7,
+    "customerId": 4,
+    "customerName": "Robert Taylor",
+    "salePrice": 33500,
+    "tradeInValue": 0,
+    "netPrice": 33500,
+    "financing": {
+      "amount": 33500,
+      "downPayment": 33500,
+      "loanAmount": 0,
+      "interestRate": 0,
+      "termMonths": 0,
+      "monthlyPayment": 0
+    },
+    "documents": [
+      {
+        "name": "Sales Contract",
+        "status": "Pending",
+        "signedDate": null
+      },
+      {
+        "name": "Cash Sale Agreement",
+        "status": "Pending",
+        "signedDate": null
+      }
+    ],
+    "status": "Negotiating",
+    "margin": 5000,
+    "dealDate": "2024-01-15T15:00:00Z",
+    "salesperson": "Mike Rodriguez",
+    "financeManager": null,
+    "deliveryDate": null
+  }
+]
