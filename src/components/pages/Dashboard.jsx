@@ -7,11 +7,13 @@ import ApperIcon from "@/components/ApperIcon";
 import { vehicleService } from "@/services/api/vehicleService";
 import { leadService } from "@/services/api/leadService";
 import { dealService } from "@/services/api/dealService";
+import { taskService } from "@/services/api/taskService";
 
 const Dashboard = () => {
-  const [vehicles, setVehicles] = useState([]);
+const [vehicles, setVehicles] = useState([]);
   const [leads, setLeads] = useState([]);
   const [deals, setDeals] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -19,14 +21,16 @@ const Dashboard = () => {
     setLoading(true);
     setError("");
     try {
-      const [vehiclesData, leadsData, dealsData] = await Promise.all([
+const [vehiclesData, leadsData, dealsData, tasksData] = await Promise.all([
         vehicleService.getAll(),
         leadService.getAll(),
-        dealService.getAll()
+        dealService.getAll(),
+        taskService.getAll()
       ]);
-      setVehicles(vehiclesData);
+setVehicles(vehiclesData);
       setLeads(leadsData);
       setDeals(dealsData);
+      setTasks(tasksData);
     } catch (err) {
       setError("Failed to load dashboard data. Please try again.");
     } finally {
@@ -47,18 +51,26 @@ const Dashboard = () => {
   const soldVehicles = vehicles.filter(v => v.status === "Sold").length;
   const totalInventoryValue = vehicles.reduce((sum, v) => sum + (v.askingPrice || 0), 0);
   
-  const hotLeads = leads.filter(l => l.status === "Hot").length;
+const hotLeads = leads.filter(l => l.status === "Hot").length;
   const totalLeads = leads.length;
+  
+  const pendingTasks = tasks.filter(t => t.status_c === "New" || t.status_c === "In Progress").length;
+  const completedTasks = tasks.filter(t => t.status_c === "Completed").length;
+  const overdueTasks = tasks.filter(t => 
+    t.due_date_c && new Date(t.due_date_c) < new Date() && t.status_c !== "Completed"
+  ).length;
   
   const avgDaysInInventory = vehicles.length > 0 
     ? Math.round(vehicles.reduce((sum, v) => sum + v.daysInInventory, 0) / vehicles.length)
     : 0;
 
-  const recentActivities = [
+const recentActivities = [
     { icon: "Car", text: "New 2023 Honda Accord added to inventory", time: "2 hours ago", type: "inventory" },
     { icon: "Users", text: "Hot lead assigned to Mike Rodriguez", time: "4 hours ago", type: "lead" },
+    { icon: "ListTodo", text: `${pendingTasks} tasks pending completion`, time: "5 hours ago", type: "task" },
     { icon: "FileText", text: "Deal completed for Toyota Camry", time: "6 hours ago", type: "deal" },
     { icon: "DollarSign", text: "Monthly sales target 80% achieved", time: "1 day ago", type: "sales" },
+    ...(overdueTasks > 0 ? [{ icon: "AlertTriangle", text: `${overdueTasks} tasks overdue`, time: "Just now", type: "alert" }] : []),
     { icon: "AlertTriangle", text: "3 vehicles over 90 days in inventory", time: "2 days ago", type: "alert" }
   ];
 
@@ -99,12 +111,12 @@ const Dashboard = () => {
           trendValue="+24%"
           color="warning"
         />
-        <StatCard
-          title="Avg. Days in Stock"
-          value={avgDaysInInventory}
-          icon="Calendar"
-          trend="down"
-          trendValue="-5%"
+<StatCard
+          title="Pending Tasks"
+          value={pendingTasks}
+          icon="ListTodo"
+          trend="up"
+          trendValue={`+${completedTasks} completed`}
           color="slate"
         />
       </div>

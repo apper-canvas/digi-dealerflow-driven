@@ -20,7 +20,7 @@ import Callback from '@/components/pages/Callback'
 import ErrorPage from '@/components/pages/ErrorPage'
 import ResetPassword from '@/components/pages/ResetPassword'
 import PromptPassword from '@/components/pages/PromptPassword'
-
+import Tasks from '@/components/pages/Tasks'
 export const AuthContext = createContext(null)
 
 function AppContent() {
@@ -142,6 +142,7 @@ function AppContent() {
           <Route path="deals" element={<DealDesk />} />
           <Route path="reports" element={<Reports />} />
           <Route path="settings" element={<Settings />} />
+<Route path="tasks" element={<Tasks />} />
           <Route path="customer-portal" element={<CustomerPortal />} />
         </Route>
       </Routes>
